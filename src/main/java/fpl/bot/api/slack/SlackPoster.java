@@ -39,7 +39,7 @@ public class SlackPoster {
         webClient.query("token", slackAuthToken);
         webClient.query("channel", channel);
         webClient.query("text", message);
-        webClient.query("as_user", true)
+        webClient.query("as_user", true);
         webClient.get();
     }
 }
