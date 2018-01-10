@@ -1,5 +1,6 @@
 package fpl.bot.api.fpl;
 
+import fpl.bot.league.model.ClassicLeagueStandingResponse;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -38,5 +39,12 @@ public class FplOfficialGameDataService {
 
     public FplOfficialTeam getTeamById(int id) {
         return fplOfficialGameData.getFplOfficialTeams().stream().filter(p -> p.getId() == id).findFirst().get();
+    }
+
+    public ClassicLeagueStandingResponse getLeagueById(int leagueId) {
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<ClassicLeagueStandingResponse> responseEntity = restTemplate.exchange(String.format("https://fantasy.premierleague.com/drf/leagues-classic-standings/%d", leagueId), HttpMethod.GET, null, ClassicLeagueStandingResponse.class);
+        ClassicLeagueStandingResponse classicLeagueStandingResponse = responseEntity.getBody();
+        return classicLeagueStandingResponse;
     }
 }
