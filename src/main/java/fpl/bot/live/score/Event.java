@@ -82,7 +82,7 @@ public class Event {
         if (type == EventType.GOAL) {
             return ":soccer: Goal by *" + playerName + "* " + teamSlackIcon + "\n";
         } else if (type == EventType.ASSIST) {
-            return ":soccer: Assist by *" + playerName + "* " + teamSlackIcon + "\n";
+            return ":assist: Assist by *" + playerName + "* " + teamSlackIcon + "\n";
         } else {
             return "Something went wrong";
         }
