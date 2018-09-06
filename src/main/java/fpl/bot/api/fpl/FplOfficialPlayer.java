@@ -10,6 +10,9 @@ public class FplOfficialPlayer {
     @JsonProperty("team_code")
     private int teamCode;
 
+    @JsonProperty("web_name")
+    private String webName;
+
     @JsonProperty("first_name")
     private String firstName;
 
@@ -59,8 +62,17 @@ public class FplOfficialPlayer {
         this.cost = cost;
     }
 
+    public String getWebName() {
+        return webName;
+    }
+
+    public void setWebName(String webName) {
+        this.webName = webName;
+    }
+
     @Override
     public String toString() {
         return "FplOfficialPlayer{" + "id=" + id + ", teamCode=" + teamCode + ", firstName='" + firstName + '\'' + ", secondName='" + secondName + '\'' + '}';
     }
+
 }

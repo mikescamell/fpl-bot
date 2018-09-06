@@ -79,7 +79,7 @@ public class PriceChangesChecker {
                 boolean rised = player.getCost() > oldPlayerInformation.get().getCost();
 
                 (rised ? risersMessage : fallersMessage).
-                        append(rightPad(player.getFirstName() + " " + player.getSecondName(), 20, " ")).
+                        append(rightPad(player.getWebName(), 20, " ")).
                         append("New price: ").
                         append(new DecimalFormat("#.0").format((double) player.getCost() / 10d)).
                         append("\n");
