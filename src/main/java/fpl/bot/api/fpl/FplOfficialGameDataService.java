@@ -43,7 +43,7 @@ public class FplOfficialGameDataService {
 
     public ClassicLeagueStandingResponse getLeagueById(int leagueId) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<ClassicLeagueStandingResponse> responseEntity = restTemplate.exchange(String.format("https://fantasy.premierleague.com/api/leagues-classic/%d/standings/", leagueId), HttpMethod.GET, null, ClassicLeagueStandingResponse.class);
+        ResponseEntity<ClassicLeagueStandingResponse> responseEntity = restTemplate.exchange(String.format("https://fantasy.premierleague.com/api/leagues-classic/%d/standings/?page_new_entries=1&page_standings=1&phase=1", leagueId), HttpMethod.GET, null, ClassicLeagueStandingResponse.class);
         ClassicLeagueStandingResponse classicLeagueStandingResponse = responseEntity.getBody();
         return classicLeagueStandingResponse;
     }
