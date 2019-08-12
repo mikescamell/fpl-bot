@@ -8,7 +8,7 @@ import java.util.List;
 public class Standings {
 
     public boolean hasNext;
-    public int number;
+    public int page;
     public List<Result> results;
 
 }
