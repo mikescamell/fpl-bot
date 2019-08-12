@@ -20,7 +20,7 @@ public class FplOfficialGameDataService {
     public void updateGameData() {
         log.info("Updating FPL Official game data..");
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<FplOfficialGameData> responseEntity = restTemplate.exchange("https://fantasy.premierleague.com/drf/bootstrap-static", HttpMethod.GET, null, FplOfficialGameData.class);
+        ResponseEntity<FplOfficialGameData> responseEntity = restTemplate.exchange("https://fantasy.premierleague.com/api/bootstrap-static", HttpMethod.GET, null, FplOfficialGameData.class);
         fplOfficialGameData = responseEntity.getBody();
     }
 
@@ -43,7 +43,7 @@ public class FplOfficialGameDataService {
 
     public ClassicLeagueStandingResponse getLeagueById(int leagueId) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<ClassicLeagueStandingResponse> responseEntity = restTemplate.exchange(String.format("https://fantasy.premierleague.com/drf/leagues-classic-standings/%d", leagueId), HttpMethod.GET, null, ClassicLeagueStandingResponse.class);
+        ResponseEntity<ClassicLeagueStandingResponse> responseEntity = restTemplate.exchange(String.format("https://fantasy.premierleague.com/api/leagues-classic/%d/standings/", leagueId), HttpMethod.GET, null, ClassicLeagueStandingResponse.class);
         ClassicLeagueStandingResponse classicLeagueStandingResponse = responseEntity.getBody();
         return classicLeagueStandingResponse;
     }

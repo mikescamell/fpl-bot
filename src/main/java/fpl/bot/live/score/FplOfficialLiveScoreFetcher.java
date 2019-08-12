@@ -55,7 +55,7 @@ public class FplOfficialLiveScoreFetcher {
     private JsonNode getGameWeekJson() {
         log.info("Checking events for gameweek " + gameweek);
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> responseEntity = restTemplate.exchange("https://fantasy.premierleague.com/drf/fixtures/?event=" + gameweek, HttpMethod.GET, null, String.class);
+        ResponseEntity<String> responseEntity = restTemplate.exchange("https://fantasy.premierleague.com/api/fixtures/?event=" + gameweek, HttpMethod.GET, null, String.class);
 
         try {
             return new ObjectMapper().readTree(responseEntity.getBody());
@@ -113,6 +113,7 @@ public class FplOfficialLiveScoreFetcher {
 
     static {
         teamSlackIcons.put(3, ":arsenal:");
+        teamSlackIcons.put(7, ":aston_villa:");
         teamSlackIcons.put(91, ":bournemouth:");
         teamSlackIcons.put(36, ":brighton:");
         teamSlackIcons.put(90, ":burnley:");
@@ -125,6 +126,8 @@ public class FplOfficialLiveScoreFetcher {
         teamSlackIcons.put(43, ":manchestercity:");
         teamSlackIcons.put(1, ":manchesterunited:");
         teamSlackIcons.put(4, ":newcastleunited:");
+        teamSlackIcons.put(45, ":norwich:");
+        teamSlackIcons.put(49, ":sheffield_utd:");
         teamSlackIcons.put(20, ":southampton:");
         teamSlackIcons.put(110, ":stoke_city:");
         teamSlackIcons.put(80, ":swansea_city:");
@@ -132,5 +135,6 @@ public class FplOfficialLiveScoreFetcher {
         teamSlackIcons.put(57, ":watford:");
         teamSlackIcons.put(35, ":west_bromwich:");
         teamSlackIcons.put(21, ":west_ham_united:");
+        teamSlackIcons.put(39, ":wolves:");
     }
 }

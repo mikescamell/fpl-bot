@@ -1,5 +1,8 @@
 package fpl.bot.league.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class NewEntryResult {
 
     public int id;
