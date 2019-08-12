@@ -23,7 +23,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Component
 public class FplOfficialLiveScoreFetcher {
     private static final Logger log = Logger.getLogger(FplOfficialLiveScoreFetcher.class);
 

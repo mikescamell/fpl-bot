@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Component
 public class LiveScoreChecker {
     private static final long SCHEDULE_RATE_IN_SECONDS = 30;
 
@@ -31,7 +30,6 @@ public class LiveScoreChecker {
     @Value("${discordLiveScoreWebhook}")
     String discordLiveScoreWebhook;
 
-    @Autowired
     private FplOfficialLiveScoreFetcher fplOfficialLiveScoreFetcher;
 
     @Autowired
